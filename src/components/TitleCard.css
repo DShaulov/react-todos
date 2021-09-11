@@ -1,0 +1,8 @@
+.title-card {
+    width: 90%;
+    margin: auto;
+    margin-top: 1%;
+    border: 2px solid black;
+    border-radius: 12px;
+    background: #8cd460;
+}
