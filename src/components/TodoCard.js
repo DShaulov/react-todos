@@ -1,12 +1,9 @@
 import './TodoCard.css'
 
 function TodoCard(props) {
+    const id = props.id;
     const completeTodo = () => {
-        let audio = document.getElementsByClassName('audio')[0];
-        let promise = audio.play();
-        if (promise !== null) {
-            promise.then();
-        }
+        props.completeTodo(id);
     }
     const text = props.details['text'];
     return (
