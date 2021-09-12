@@ -15,15 +15,25 @@ function App() {
         setBuilderToggle(!builderToggle);
     }
     const addTodo = (details) => {
-        let dict = {...todos};
-        dict[todoID] = <TodoCard key={todoID} details={details} completeTodo={completeTodo} id={todoID}/>;
-        setTodos(dict);
-        setBuilderToggle(!builderToggle);
+        let newTodos = {...todos};
+        newTodos[todoID] = {};
+        newTodos[todoID]['text'] = details['text'];
+        newTodos[todoID]['completed'] = false;
         incrementTodoID(todoID + 1);
+        setTodos(newTodos);
+        toggleBuilder();
     }
-    const completeTodo = (id) => {
-        console.log(id);
+    const removeTodo = (id) => {
+        let dict = {...todos};
+        delete todos[id]
     }
+    /* const completeTodo = (id) => {
+        let todo = todos[id];
+        let newCompletedTodos = {...completedTodos};
+        newCompletedTodos[id] = todo;
+        delete todos[id];
+        setCompletedTodos(newCompletedTodos);
+    } */
     return (
         <div className="App">
             <TitleCard />

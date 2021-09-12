@@ -1,11 +1,16 @@
 import './TodoCard.css'
+import { useState } from 'react';
 
 function TodoCard(props) {
     const id = props.id;
+    const [completed, setCompleted] = useState(false);
     const completeTodo = () => {
-        props.completeTodo(id);
+        setCompleted(!completed);
     }
-    const text = props.details['text'];
+    const removeTodo = (id) => {
+        props.removeTodo(id);
+    }
+    const text = props.text;
     return (
         <div className="todo-card-div">
             <div className="todo-card-checkbox-div">
@@ -16,7 +21,7 @@ function TodoCard(props) {
                 <p className="todo-card-text">{text}</p>
             </div>
             <div className="todo-card-del-div">
-                <button className="todo-card-del-btn">-</button>
+                <button className="todo-card-del-btn" onClick={() => removeTodo(id)}>-</button>
             </div>
         </div>
     )
