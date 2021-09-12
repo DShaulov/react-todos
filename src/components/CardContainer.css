@@ -1,5 +1,18 @@
 .card-container {
     margin: auto;
     margin-top: 10px;
+}
+.card-container__todo-div {
+    margin-top: 10px;
+}
 
+.card-container__completed-todo-div__title{
+    width: 70%;
+    margin: auto;
+    margin-top: 1%;
+    border: 2px solid black;
+    border-radius: 12px;
+    background: orange;
+    padding: 5px;
+    margin-bottom: 10px;
 }

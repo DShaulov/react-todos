@@ -1,7 +1,6 @@
 import './TodoBuilder.css'
 
 function TodoBuilder(props) {
-    const toggled = props.toggle;
     const onSubmit = (e) => {
         e.preventDefault();
         // Check for empty input
@@ -14,7 +13,7 @@ function TodoBuilder(props) {
         }
         props.addTodo(details);
     }
-    if (toggled) {
+    if (props.toggled) {
         return (
             <div className="todo-builder-div">
                 <form id="todo-form" onSubmit={onSubmit} className="todo-builder-form">

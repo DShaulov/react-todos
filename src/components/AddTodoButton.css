@@ -1,7 +1,7 @@
 .add-todo-button{
     display: inline-block;
     text-decoration: none;
-    background: #8cd460;
+    background: orange;
     font-weight: bold;
     color: black;
     width: 60px;
@@ -12,7 +12,7 @@
     text-align: center;
     vertical-align: middle;
     overflow: hidden;
-    box-shadow: 0px 0px 0px 5px #8cd460;
+    box-shadow: 0px 0px 0px 5px orange;
     border: solid 2px black;
     transition: .4s;
 }
