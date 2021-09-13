@@ -43,10 +43,34 @@ function CardContainer(props) {
             setCompletedTodos(newCompletedTodos);
         }
     }
+    const removeTodo = (id) => {
+        let todo = todos[id];
+        if (todo !== undefined) {
+            let newTodos = {...todos};
+            delete newTodos[id];
+            setTodos(newTodos);
+        }
+        else {
+            let newCompletedTodos = {...completedTodos};
+            todo = newCompletedTodos[id];
+            delete newCompletedTodos[id];
+            setCompletedTodos(newCompletedTodos);
+        }
+    }
     const buildTodos = (tasks) => {
         let todoArray = [];
+        let eventHandlers = {
+            completeTodo: completeTodo,
+            removeTodo: removeTodo
+        }
         for (var key in tasks) {
-            todoArray.push(<TodoCard key={key} id={key} text={tasks[key]['text']} completeTodo={completeTodo} completed={tasks[key]['completed']}/>);
+            let details = {
+                text: tasks[key]['text'],
+                id: key,
+                completed: tasks[key]['completed']
+
+            }
+            todoArray.push(<TodoCard key={key} eventHandlers={eventHandlers} details={details}/>);
         }
         return todoArray;
     }
